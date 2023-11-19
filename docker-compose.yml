@@ -14,7 +14,7 @@ services:
       - "28017:28017"
       - "27017:27017"
     volumes:
-      - db-data:/data/db
+      - "db-data:/data/db"
 
   order:
     image: juancarloslhhellin/p2gps:order
@@ -43,3 +43,5 @@ services:
       condition: on-failure
     ports:
       - "80:8080"
+    volumes:
+      db-data:
